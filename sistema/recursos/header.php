@@ -54,7 +54,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" id="btn_proveedor" >Proveedores</a></li>
             <li><a class="dropdown-item" id="btn_articulos">Artículos</a></li>
-            <li><a class="dropdown-item" href="../sistema/citas/citas.php">Mobiliario</a></li>
+            <li><a class="dropdown-item" id="btn_material">Material</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -62,6 +62,20 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" id="btn_citas">Citas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-primary text-white" href="./cerrarSesion.php">
+              <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+          </a>
         </li>
       </ul>
     </div>

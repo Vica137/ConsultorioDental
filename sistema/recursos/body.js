@@ -12,6 +12,10 @@ $(document).ready(function () {
     $("#container").load("../sistema/proveedor/proveedor.php");
   });
 
+  $("#btn_material").click(function () {
+    $("#container").load("../sistema/material/material.php");
+  });
+
   $("#btn_citas").click(function () {
     $("#container").load("../sistema/citas/citas.php");
   });
