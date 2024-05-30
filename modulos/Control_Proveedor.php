@@ -8,23 +8,23 @@
  
   if($_POST['dml'] == 'insert')
   {
-   $descrip = $_POST['descrip'];
-   $obj_Proveedor->agregarProveedor($descrip);
+   $prov_descrip = $_POST['nombProd'];
+   $obj_Proveedor->agregarProveedor($prov_descrip);
 
    echo 1;
-  }
-  else if ($_POST['dml'] == 'update') {
-   $descrip = $_POST['descrip'];
+
+  }else if ($_POST['dml'] == 'update') {
+   $prov_descrip = $_POST['nombProd'];
    $proveedor = $_POST['id'];
-   $obj_Proveedor->modificarProveedor($proveedor, $descrip);
+   $obj_Proveedor->modificarProveedor($proveedor, $prov_descrip);
     echo 1;
-  }
-  elseif($_POST['dml'] == 'delete')
+
+  }elseif($_POST['dml'] == 'delete')
   {
     $proveedor = $_POST['id'];
-
     $obj_Proveedor->eliminarProveedor($proveedor);
     echo 1;
   }
 
 ?>
+

@@ -6,7 +6,7 @@
   $arr_proveedor = $obj_Proveedor->buscarTodos();
 ?>
 
-<section id="tabla-proveedores" class="mt-5 mb-5">
+ <section id="tabla-articulos" class="mt-5 mb-5">
   <div class="container">
     <div class="row mb-5">
       <div class="col">
@@ -14,7 +14,7 @@
       </div>
 
       <div class="col center">
-        <button type="button" class="btn btn-primary" id="btn-registro-proveedor">Agregar Proveedor</button>
+        <button type="button" class="btn btn-primary" id="btn-registro-proveedor">Añadir Proveedor</button>
       </div>
       
       <div class="table-responsive">
@@ -22,8 +22,7 @@
               <thead class="table-light">
                 <tr>
                   <td><b>#Id</b></td>
-                  <td><b>Descripción</b></td>
-                  <td><b>Opciones</b></td>
+                  <td><b>Nombre del proveedor</b></td>
                 </tr>
               </thead>
               <tbody>
@@ -32,9 +31,10 @@
                 <tr>
                    <td><?php echo $proveedor['prove_id_prove']; ?></td>
                    <td><?php echo $proveedor['prove_descrip']; ?></td>
+
                     <td>
                       <p ><a type="button" class="btn btn-primary btn-table" title="Actualizar" onclick="actualizarProveedor(<?php echo $proveedor['prove_id_prove'] ?>)">Editar</a></p>
-                      <p><a type="button" class="btn btn-primary btn-table" title="Eliminar" onclick="eliminarProveedor(<?php echo $proveedor['prove_id_prove'] ?>, '<?php echo $proveedor['prove_descrip'] ?>')">Eliminar</a></p>
+                      <p><a type="button" class="btn btn-primary btn-table" title="Eliminar" onclick="eliminarProv(<?php echo $proveedor['prove_id_prove'] ?>, '<?php echo $proveedor['prove_id_prove'] ?>')">Eliminar</a></p>
                       <p><a type="button" class="btn btn-primary btn-table" title="Actualizar" onclick="consultarProveedor(<?php echo $proveedor['prove_id_prove'] ?>)">Detalle</a></p>
                     </td>
                 </tr>

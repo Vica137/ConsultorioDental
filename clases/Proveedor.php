@@ -1,70 +1,75 @@
 <?php
   class Proveedor
   {
-    function agregarProveedor($descrip)
-    {
-        $SQL_Ins_Proveedor = 
-        "INSERT INTO proveedor(prove_descrip) VALUES ('$descrip')";
-
-        $bd = new BD();
-        $bd->abrirBD();
-        $transaccion = new Transaccion($bd->conexion);
-        $transaccion->enviarQuery($SQL_Ins_Proveedor);
-        $bd->cerrarBD();
-
-    }
-
-  
-    function eliminarProveedor($proveedor)
-    {
-      $SQL_Eli_Proveedor = 
-      "DELETE FROM proveedor WHERE prove_id_prove = $proveedor";
-
-      $bd = new BD();
-      $bd->abrirBD();
-      $transaccion = new Transaccion($bd->conexion);
-      $transaccion->enviarQuery($SQL_Eli_Proveedor);
-      $bd->cerrarBD();
-    }
-
-    function buscarTodos()
-	  {
-      $SQL_Bus_Proveedores = 
+    function buscarTodos(){
+      $SQL_Bus_Proveedor = 
       "SELECT * FROM proveedor";
 
-		  $bd = new BD();
-		  $bd->abrirBD();
-		  $transaccion = new Transaccion($bd->conexion);
-		  $transaccion->enviarQuery($SQL_Bus_Proveedores);
-		  $bd->cerrarBD();
-		  return ($transaccion->traerRegistros());
+      $bd = new BD();
+      $bd->abrirBD();
+      $transaccion_1 = new Transaccion($bd->conexion);
+      $transaccion_1->enviarQuery($SQL_Bus_Proveedor);
+      $bd->cerrarBD();
+      return ($transaccion_1->traerRegistros());
     }
 
+    function agregarProveedor($prov_descrip){
 
-    function modificarProveedor($proveedor, $descrip)
-    {
-        $SQL_Act_Proveedor = 
-        "UPDATE proveedor SET prove_descrip = '$descrip' WHERE prove_id_prove = $proveedor";
+        $SQL_And_Proveedor = 
+        "INSERT INTO proveedor(prove_descrip)
+        VALUES ('$prov_descrip')";
 
         $bd = new BD();
         $bd->abrirBD();
-        $transaccion = new Transaccion($bd->conexion);
-        $transaccion->enviarQuery($SQL_Act_Proveedor);
+        $transaccion_1 = new Transaccion($bd->conexion);
+        $transaccion_1->enviarQuery($SQL_And_Proveedor);
         $bd->cerrarBD();
     }
 
-    function buscarProveedor($proveedor){
+    function modificarProveedor($proveedor, $prov_descrip){
+      $SQL_Mod_Proveedor =
+      "UPDATE proveedor 
+      SET prove_descrip = '$prov_descrip'
+      WHERE prove_id_prove = '$proveedor' ";
 
+        $bd = new BD();
+        $bd->abrirBD();
+        $transaccion_1 = new Transaccion($bd->conexion);
+        $transaccion_1->enviarQuery($SQL_Mod_Proveedor);
+        $bd->cerrarBD();
+    }
+
+    function eliminarProveedor($proveedor){
+      $SQL_Eli_Prov = 
+      " DELETE FROM proveedor
+        WHERE prove_id_prove = $proveedor;
+      ";
+
+      $bd = new BD();
+      $bd->abrirBD();
+      $transaccion_1 = new Transaccion($bd->conexion);
+      $transaccion_1->enviarQuery($SQL_Eli_Prov);
+      $bd->cerrarBD();
+    }
+
+    function buscarProveedor($intProveedor){
+      
       $SQL_Bus_Proveedor = 
-      "SELECT * FROM proveedor WHERE prove_id_prove = $proveedor";
+      "SELECT prove_id_prove,
+        prove_descrip
+          FROM proveedor 
+          WHERE prove_id_prove = $intProveedor;
+      ";
   
       $bd = new BD();
       $bd->abrirBD();
-      $transaccion = new Transaccion($bd->conexion);
-      $transaccion->enviarQuery($SQL_Bus_Proveedor);
-      $obj_Proveedor = $transaccion->traerObjeto(0);
+      $transaccion_1 = new Transaccion($bd->conexion);
+      $transaccion_1->enviarQuery($SQL_Bus_Proveedor);
+      $obj_Curso = $transaccion_1->traerObjeto(0);
       $bd->cerrarBD();
-      return ($transaccion->traerObjeto(0));
+      return ($transaccion_1->traerObjeto(0));
     }
+
+   
   }
 ?>

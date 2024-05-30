@@ -3,7 +3,6 @@ $(document).ready(function () {
     $("#container").load("../sistema/articulos/frm_articulos.php");
     $("html, body").animate({ scrollTop: 0 }, 0);
   });
-});
 
 // Validar el formulario
 function validarFormularioEvento() {
@@ -118,8 +117,7 @@ $(document).ready(function () {
             setTimeout(function () {
               $("html, body").animate({ scrollTop: 0 }, 0);
               $("#container").load(
-                "../sistema/articulos/articulos.php"
-              );
+                "../sistema/articulos/articulos.php");
             }, 0);
           } else {
             alertify.error("Hubo un problema al actualizar los datos del articulo.");
