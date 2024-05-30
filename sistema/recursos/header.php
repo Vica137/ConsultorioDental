@@ -28,6 +28,9 @@
     <link href="../recursos/css/style.css" rel="stylesheet" type="text/css">
     <!-- DataTables -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   </head>
 
   <body>
@@ -38,12 +41,16 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container">
+    <!-- Botón para regresar a la vista anterior -->
+        <button id="btn_back" class="btn btn-secondary">
+          <i class="fas fa-arrow-left"></i></button>
     <a class="navbar-brand" href="#"><img src="../recursos/img/logo.png" alt="" width="130px"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-4 mb-lg-0">
+
         <li class="nav-item">
           <a class="nav-link" aria-current="page" id="btn_inicio">Inicio</a>
         </li>

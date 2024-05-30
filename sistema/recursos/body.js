@@ -20,4 +20,26 @@ $(document).ready(function () {
     $("#container").load("../sistema/citas/citas.php");
   });
 
+
+// Manejo del historial
+  let historyStack = [];
+
+  function loadPage(url) {
+    historyStack.push(url);
+    $("#container").load(url);
+  }
+
+
+
+  // Acción del botón de regreso
+  $("#btn_back").click(function () {
+    if (historyStack.length > 1) {
+      historyStack.pop(); // Elimina la página actual
+      let previousPage = historyStack.pop(); // Obtiene la página anterior
+      loadPage(previousPage); // Carga la página anterior
+    } else {
+      alert("No hay página anterior para regresar.");
+    }
+  });
+
 });

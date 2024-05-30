@@ -74,8 +74,7 @@ class Cita
         $transaccion_1->enviarQuery($SQL_Bus_Cita);
         $obj_Cita = $transaccion_1->traerObjeto(0);
         $bd->cerrarBD();
-        return ($transaccion_1->traerObjeto(0));
+        return $obj_Cita;
     }
 }
 ?>
-
